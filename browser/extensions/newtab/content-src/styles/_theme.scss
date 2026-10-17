@@ -115,7 +115,7 @@ $shadow-image-inset: inset 0 0 0 0.5px $black-15;
 
 @media (forced-colors: none) and (prefers-contrast: no-preference) {
   :root:not([lwt-newtab]) .neatflow-enabled {
-    --newtab-primary-action-background: light-dark(#2F66B3, #8BB6FF);
+    --newtab-primary-action-background: light-dark(#5B3F86, #C1A7EE);
   }
 }
 

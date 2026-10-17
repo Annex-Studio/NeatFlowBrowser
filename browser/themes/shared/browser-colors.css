@@ -80,9 +80,9 @@
   @media not ((forced-colors) or (-moz-native-theme) or (prefers-contrast)) {
     @media -moz-pref("browser.neatflow.enabled") {
       :root:not([lwtheme]) {
-        --focus-outline-color: light-dark(#2f66b3, #8bb6ff);
+        --focus-outline-color: light-dark(#5b3f86, #c1a7ee);
         --toolbar-field-border-color-focus: var(--focus-outline-color);
-        --tab-background-color-selected: color-mix(in srgb, var(--toolbar-background-color) 94%, #4b8dff);
+        --tab-background-color-selected: color-mix(in srgb, var(--toolbar-background-color) 94%, #7654a6);
       }
     }
   }

@@ -18,11 +18,24 @@
 @media -moz-pref("browser.neatflow.enabled") and (not (prefers-contrast)) {
   html.private {
     --background-color-canvas: light-dark(#f6f7f9, #191c22);
-    --link-color: light-dark(#2f66b3, #8bb6ff);
-    --link-color-hover: light-dark(#2f66b3, #8bb6ff);
-    --link-color-active: light-dark(#2f66b3, #8bb6ff);
+    --link-color: light-dark(#5b3f86, #c1a7ee);
+    --link-color-hover: light-dark(#5b3f86, #c1a7ee);
+    --link-color-active: light-dark(#5b3f86, #c1a7ee);
 
     color-scheme: light dark;
+  }
+
+  @media (forced-colors: none) {
+    html.private .logo {
+      background: url("chrome://branding/content/about-logo.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    html.private content-search-handoff-ui {
+      --content-search-handoff-ui-fakefocus-border-color: light-dark(#5b3f86, #c1a7ee);
+      --content-search-handoff-ui-fakefocus-box-shadow-inner: light-dark(#5b3f86, #c1a7ee);
+      --content-search-handoff-ui-fakefocus-box-shadow-outer: light-dark(rgb(91, 63, 134, 0.3), rgb(193, 167, 238, 0.3));
+    }
   }
 
   @media (prefers-color-scheme: dark) {

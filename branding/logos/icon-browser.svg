@@ -1,3 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1287" height="1287" viewBox="339 326 1287 1287">
-  <image href="icon.svg" width="2000" height="2000"/>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">NeatFlow Browser</title>
+  <circle cx="64" cy="64" r="58" fill="#4c3575"/>
+  <circle cx="64" cy="64" r="43" fill="none" stroke="#d8c9f2" stroke-width="6"/>
+  <path d="M64 25 83 69 64 62 45 69 64 25Z" fill="#f5f0ff"/>
+  <path d="M64 103 45 59 64 66 83 59 64 103Z" fill="#b99ce6"/>
+  <circle cx="64" cy="64" r="6" fill="#fff"/>
 </svg>
