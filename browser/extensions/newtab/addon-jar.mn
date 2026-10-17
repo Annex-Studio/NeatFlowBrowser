@@ -15,7 +15,6 @@ browser.jar:
 * builtin-addons/newtab/data/content/abouthomecache/script.js.template (./data/content/abouthomecache/script.js.template)
   builtin-addons/newtab/data/data/content/assets/  (./data/content/assets/*)
   builtin-addons/newtab/data/data/content/assets/icon.svg (../../../branding/logos/icon.svg)
-  builtin-addons/newtab/data/data/content/assets/icon-browser.svg (../../../branding/logos/icon-browser.svg)
   builtin-addons/newtab/data/data/content/assets/L_logo.svg (../../../branding/logos/L_logo.svg)
   builtin-addons/newtab/data/data/content/assets/D_logo.svg (../../../branding/logos/D_logo.svg)
   builtin-addons/newtab/data/data/content/assets/wordmark.svg (../../../branding/logos/wordmark.svg)
