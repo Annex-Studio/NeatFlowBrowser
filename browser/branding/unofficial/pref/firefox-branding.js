@@ -4,6 +4,17 @@
 
 // This file contains branding-specific prefs.
 
+pref("browser.neatflow.enabled", true);
+pref("browser.newtabpage.activity-stream.neatflow.enabled", true);
+pref("browser.topsites.useRemoteSetting", false);
+pref("browser.topsites.contile.enabled", false);
+pref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", false);
+pref("browser.newtabpage.activity-stream.unifiedAds.spocs.enabled", false);
+pref("browser.newtabpage.activity-stream.showWeather", false);
+pref("browser.newtabpage.activity-stream.discoverystream.enabled", false);
+pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
+
 pref("startup.homepage_override_url", "");
 pref("startup.homepage_welcome_url", "");
 pref("startup.homepage_welcome_url.additional", "");

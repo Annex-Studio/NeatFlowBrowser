@@ -15,6 +15,11 @@ browser.jar:
 * builtin-addons/newtab/data/content/abouthomecache/script.js.template (./data/content/abouthomecache/script.js.template)
   builtin-addons/newtab/data/data/content/assets/  (./data/content/assets/*)
   builtin-addons/newtab/data/data/content/assets/icon.svg (../../../branding/logos/icon.svg)
+  builtin-addons/newtab/data/data/content/assets/icon-browser.svg (../../../branding/logos/icon-browser.svg)
+  builtin-addons/newtab/data/data/content/assets/L_logo.svg (../../../branding/logos/L_logo.svg)
+  builtin-addons/newtab/data/data/content/assets/D_logo.svg (../../../branding/logos/D_logo.svg)
+  builtin-addons/newtab/data/data/content/assets/wordmark.svg (../../../branding/logos/wordmark.svg)
+  builtin-addons/newtab/data/data/content/assets/wordmark-dark.svg (../../../branding/logos/wordmark-dark.svg)
 # The bundle and CSS files below are generated at build time into the objdir
 # by build-newtab-bundles.py (see moz.build). They are not present in the
 # source tree; the JAR maker finds them via its objdir fallback search path.

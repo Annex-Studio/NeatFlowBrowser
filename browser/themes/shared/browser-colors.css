@@ -78,14 +78,12 @@
   }
 
   @media not ((forced-colors) or (-moz-native-theme) or (prefers-contrast)) {
-    :root:not([lwtheme]) {
-      --focus-outline-color: light-dark(#2F66B3, #8BB6FF);
-      --toolbar-field-border-color-focus: var(--focus-outline-color);
-      --tab-background-color-selected: color-mix(
-        in srgb,
-        var(--toolbar-background-color) 94%,
-        #4B8DFF
-      );
+    @media -moz-pref("browser.neatflow.enabled") {
+      :root:not([lwtheme]) {
+        --focus-outline-color: light-dark(#2f66b3, #8bb6ff);
+        --toolbar-field-border-color-focus: var(--focus-outline-color);
+        --tab-background-color-selected: color-mix(in srgb, var(--toolbar-background-color) 94%, #4b8dff);
+      }
     }
   }
 }

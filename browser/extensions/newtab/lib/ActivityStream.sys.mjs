@@ -686,6 +686,13 @@ export const PREFS_CONFIG = new Map([
     },
   ],
   [
+    "neatflow.enabled",
+    {
+      title: "Enables NeatFlow-specific New Tab styling",
+      value: false,
+    },
+  ],
+  [
     "hideLogo",
     {
       title: "Hide the Firefox logo on new tab",

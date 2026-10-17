@@ -92,6 +92,19 @@ describe("<Base>", () => {
     expect(container.querySelector(".outer-wrapper")).toBeInTheDocument();
   });
 
+  it("applies NeatFlow styling only when enabled", () => {
+    const defaultRender = renderBase(DEFAULT_PROPS);
+    expect(
+      defaultRender.container.querySelector(".neatflow-enabled")
+    ).not.toBeInTheDocument();
+
+    const { container } = renderBase({
+      ...DEFAULT_PROPS,
+      Prefs: { values: { "neatflow.enabled": true } },
+    });
+    expect(container.querySelector(".neatflow-enabled")).toBeInTheDocument();
+  });
+
   it("should render the BaseContent component, passing through all props", () => {
     // Enzyme read wrapper.find(BaseContent).props() and deep-equaled it against
     // DEFAULT_PROPS. RTL cannot read a child component's props object, so we

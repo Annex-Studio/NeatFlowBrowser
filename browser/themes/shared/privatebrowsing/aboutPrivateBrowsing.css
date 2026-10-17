@@ -15,6 +15,23 @@
   }
 }
 
+@media -moz-pref("browser.neatflow.enabled") and (not (prefers-contrast)) {
+  html.private {
+    --background-color-canvas: light-dark(#f6f7f9, #191c22);
+    --link-color: light-dark(#2f66b3, #8bb6ff);
+    --link-color-hover: light-dark(#2f66b3, #8bb6ff);
+    --link-color-active: light-dark(#2f66b3, #8bb6ff);
+
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .wordmark {
+      background-image: url("chrome://branding/content/about-wordmark-dark.svg");
+    }
+  }
+}
+
 /**
  * When the showBanner class is applied, the banner is displayed at the top
  * of the page, and we need to adjust the padding, so that the banner is

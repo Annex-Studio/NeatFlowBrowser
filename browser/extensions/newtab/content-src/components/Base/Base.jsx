@@ -1080,6 +1080,7 @@ export class BaseContent extends React.PureComponent {
     const featureClassName = [
       // Nova helper class to target pre-Nova CSS styles
       "classic-enabled",
+      prefs["neatflow.enabled"] && "neatflow-enabled",
       mobileDownloadPromoEnabled &&
         mobileDownloadPromoVariantABorC &&
         "has-mobile-download-promo", // Mobile download promo modal is enabled/visible
@@ -1261,7 +1262,15 @@ export class BaseContent extends React.PureComponent {
             className={`nova-outer-wrapper${this.state.fixedSearch ? " stuck-search" : ""}${searchHasOwnRow ? " search-has-own-row" : ""}`}
           >
             <div
-              className={`container nova-enabled${logoShouldBeCentered ? " logo-in-content" : ""}${searchHasOwnRow ? " search-has-own-row" : ""}${hasFiveColumnLayout ? " sections-5-col" : ""}`}
+              className={[
+                "container nova-enabled",
+                prefs["neatflow.enabled"] && "neatflow-enabled",
+                logoShouldBeCentered && "logo-in-content",
+                searchHasOwnRow && "search-has-own-row",
+                hasFiveColumnLayout && "sections-5-col",
+              ]
+                .filter(Boolean)
+                .join(" ")}
             >
               <aside className="sidebar-inline-start">
                 {!prefs.hideLogo && !logoShouldBeCentered && !isPageEmpty && (

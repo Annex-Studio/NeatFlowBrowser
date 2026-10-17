@@ -15,6 +15,6 @@ describe("<Logo>", () => {
       container.querySelector("div.logo-and-wordmark")
     ).toBeInTheDocument();
     expect(container.querySelector("div.logo")).toBeInTheDocument();
-    expect(container.querySelector("div.wordmark")).not.toBeInTheDocument();
+    expect(container.querySelector("div.wordmark")).toBeInTheDocument();
   });
 });

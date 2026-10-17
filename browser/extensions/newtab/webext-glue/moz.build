@@ -65,7 +65,12 @@ FINAL_TARGET_FILES.data.data += [
     "../data/content/assets/**",
 ]
 FINAL_TARGET_FILES.data.data.content.assets += [
+    "/branding/logos/D_logo.svg",
+    "/branding/logos/icon-browser.svg",
     "/branding/logos/icon.svg",
+    "/branding/logos/L_logo.svg",
+    "/branding/logos/wordmark-dark.svg",
+    "/branding/logos/wordmark.svg",
 ]
 FINAL_TARGET_FILES.data.content += [
     "../data/content/bundled-renderer-index.js",
