@@ -79,6 +79,16 @@ h2 {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .show-on-init {
+    transition: none;
+
+    &.on {
+      animation: none;
+    }
+  }
+}
+
 .actions {
   border-block-start: 1px solid var(--border-color);
   display: flex;

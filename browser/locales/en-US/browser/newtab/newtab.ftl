@@ -15,7 +15,7 @@ newtab-customize-panel-label =
 newtab-settings-dialog-label =
     .aria-label = Settings
 newtab-logo-and-wordmark =
-    .aria-label = { -brand-full-name }
+    .aria-label = NeatFlow Browser
 
 ## Search box component.
 

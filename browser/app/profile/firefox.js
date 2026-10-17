@@ -1951,9 +1951,9 @@ pref("prompts.defaultModalType", 3);
 // Whether to use the discrete Top Sites component.
 pref("browser.topsites.component.enabled", false);
 
-pref("browser.topsites.useRemoteSetting", true);
-// Fetch sponsored Top Sites from Mozilla Tiles Service (Contile)
-pref("browser.topsites.contile.enabled", true);
+// Use local Top Sites and disable sponsored tiles.
+pref("browser.topsites.useRemoteSetting", false);
+pref("browser.topsites.contile.enabled", false);
 pref("browser.topsites.contile.endpoint", "https://contile.services.mozilla.com/v1/tiles");
 
 // Activates preloading of the new tab url.
@@ -1998,14 +1998,14 @@ pref("browser.newtabpage.activity-stream.mobileDownloadModal.variant-b", false);
 pref("browser.newtabpage.activity-stream.mobileDownloadModal.variant-c", false);
 
 // Mozilla Ad Routing Service (MARS) unified ads service
-pref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", true);
-pref("browser.newtabpage.activity-stream.unifiedAds.spocs.enabled", true);
+pref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", false);
+pref("browser.newtabpage.activity-stream.unifiedAds.spocs.enabled", false);
 pref("browser.newtabpage.activity-stream.unifiedAds.endpoint", "https://ads.mozilla.org/");
 pref("browser.newtabpage.activity-stream.unifiedAds.adsFeed.enabled", false);
 pref("browser.newtabpage.activity-stream.unifiedAds.ohttp.enabled", true);
 
 // Weather widget for newtab
-pref("browser.newtabpage.activity-stream.showWeather", true);
+pref("browser.newtabpage.activity-stream.showWeather", false);
 pref("browser.newtabpage.activity-stream.weather.query", "");
 pref("browser.newtabpage.activity-stream.weather.display", "detailed");
 
@@ -2111,7 +2111,7 @@ pref("messaging-system.askForFeedback", true);
 pref("browser.newtabpage.activity-stream.asrouter.useRemoteL10n", true);
 
 // These prefs control if Discovery Stream is enabled.
-pref("browser.newtabpage.activity-stream.discoverystream.enabled", true);
+pref("browser.newtabpage.activity-stream.discoverystream.enabled", false);
 pref("browser.newtabpage.activity-stream.discoverystream.hardcoded-basic-layout", false);
 pref("browser.newtabpage.activity-stream.discoverystream.hybridLayout.enabled", false);
 pref("browser.newtabpage.activity-stream.discoverystream.hideCardBackground.enabled", false);

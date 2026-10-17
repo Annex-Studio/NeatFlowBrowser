@@ -64,6 +64,9 @@ FINAL_TARGET_PP_FILES.data.content.abouthomecache += [
 FINAL_TARGET_FILES.data.data += [
     "../data/content/assets/**",
 ]
+FINAL_TARGET_FILES.data.data.content.assets += [
+    "/branding/logos/icon.svg",
+]
 FINAL_TARGET_FILES.data.content += [
     "../data/content/bundled-renderer-index.js",
     "../data/content/bundled-renderer.css",

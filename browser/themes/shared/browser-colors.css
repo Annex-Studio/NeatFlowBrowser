@@ -76,4 +76,16 @@
       --chrome-content-separator-color: light-dark(rgb(204, 204, 204), hsl(240, 5%, 5%));
     }
   }
+
+  @media not ((forced-colors) or (-moz-native-theme) or (prefers-contrast)) {
+    :root:not([lwtheme]) {
+      --focus-outline-color: light-dark(#2F66B3, #8BB6FF);
+      --toolbar-field-border-color-focus: var(--focus-outline-color);
+      --tab-background-color-selected: color-mix(
+        in srgb,
+        var(--toolbar-background-color) 94%,
+        #4B8DFF
+      );
+    }
+  }
 }

@@ -13,7 +13,6 @@ function Logo() {
         data-l10n-id="newtab-logo-and-wordmark"
       >
         <div className="logo" />
-        <div className="wordmark" />
       </div>
     </h1>
   );
