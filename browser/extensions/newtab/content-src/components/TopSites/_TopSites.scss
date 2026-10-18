@@ -621,6 +621,23 @@ $calculated-max-width-twice-widest: $break-point-widest + 2 * $card-width;
   }
 }
 
+@media (forced-colors: none) and (prefers-contrast: no-preference) {
+  :root:not([lwt-newtab]) .neatflow-enabled {
+    .top-site-outer .tile {
+      border: 1px solid var(--neatflow-shortcut-border);
+      border-radius: var(--border-radius-medium);
+      box-shadow: none;
+    }
+
+    .top-sites-list:not(.dnd-active) .top-site-outer.active .tile,
+    .top-sites-list:not(.dnd-active) .top-site-outer:has(.top-site-inner:hover) .tile,
+    .top-sites-list:not(.dnd-active) .top-site-outer:has(.top-site-inner :focus-visible) .tile {
+      border-color: var(--neatflow-shortcut-border-hover);
+      box-shadow: none;
+    }
+  }
+}
+
 .edit-topsites-wrapper {
   .top-site-inner > .top-site-button > .tile {
     border: 1px solid var(--border-color);

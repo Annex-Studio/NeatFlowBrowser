@@ -82,7 +82,21 @@
       :root:not([lwtheme]) {
         --focus-outline-color: light-dark(#5b3f86, #c1a7ee);
         --toolbar-field-border-color-focus: var(--focus-outline-color);
-        --tab-background-color-selected: color-mix(in srgb, var(--toolbar-background-color) 94%, #7654a6);
+        --toolbox-background-color: light-dark(#f6f3fa, #201d27);
+        --toolbar-background-color: light-dark(#faf9fc, #26232d);
+        --chrome-content-separator-color: light-dark(#e6e1ed, #3d3647);
+        --toolbar-field-background-color: light-dark(#fff, #2d2935);
+        --toolbar-field-background-color-focus: light-dark(#fff, #2d2935);
+        --toolbar-field-border-color: light-dark(#e1dbe9, #4a4353);
+        --panel-background-color: light-dark(#fff, #25222d);
+        --panel-border-color: light-dark(#e6e1ed, #3d3647);
+        --toolbarbutton-background-color-hover: light-dark(#eee9f5, #393341);
+        --toolbarbutton-background-color-active: light-dark(#e4dcef, #463a55);
+        --tab-background-color-hover: light-dark(#f1edf6, #302b37);
+        --tab-background-color-selected: light-dark(#eee9f5, #332d3d);
+        --tab-border-color-selected: light-dark(#ded5e9, #494152);
+        --tab-border-radius: var(--border-radius-medium);
+        --tab-box-shadow-selected: none;
       }
     }
   }

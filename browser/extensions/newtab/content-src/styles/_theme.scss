@@ -115,7 +115,12 @@ $shadow-image-inset: inset 0 0 0 0.5px $black-15;
 
 @media (forced-colors: none) and (prefers-contrast: no-preference) {
   :root:not([lwt-newtab]) .neatflow-enabled {
+    --newtab-background-color: light-dark(#F8F7FB, #19171F);
+    --newtab-background-color-secondary: light-dark(#FFF, #25222D);
+    --newtab-background-card: light-dark(#FFF, #25222D);
     --newtab-primary-action-background: light-dark(#5B3F86, #C1A7EE);
+    --neatflow-shortcut-border: light-dark(#E6E1ED, #3D3647);
+    --neatflow-shortcut-border-hover: light-dark(#B9A7D2, #74628A);
   }
 }
 

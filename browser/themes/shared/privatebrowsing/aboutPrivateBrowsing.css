@@ -17,7 +17,7 @@
 
 @media -moz-pref("browser.neatflow.enabled") and (not (prefers-contrast)) {
   html.private {
-    --background-color-canvas: light-dark(#f6f7f9, #191c22);
+    --background-color-canvas: light-dark(#f8f7fb, #19171f);
     --link-color: light-dark(#5b3f86, #c1a7ee);
     --link-color-hover: light-dark(#5b3f86, #c1a7ee);
     --link-color-active: light-dark(#5b3f86, #c1a7ee);
