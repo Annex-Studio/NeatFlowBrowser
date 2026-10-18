@@ -1,0 +1,215 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* NeatFlow Design System - Semantic Tokens */
+
+:root {
+  /* ===== Color Palette ===== */
+  
+  /* Brand Colors - Subtle Lavender/Purple */
+  --neatflow-accent-primary: #5b3f86;
+  --neatflow-accent-secondary: #74628a;
+  --neatflow-accent-tertiary: #b9a7d2;
+  --neatflow-accent-light: #c1a7ee;
+  --neatflow-accent-dark: #463a55;
+  
+  /* Light Mode Colors */
+  --neatflow-background-primary: #f8f7fb;
+  --neatflow-background-secondary: #ffffff;
+  --neatflow-background-tertiary: #faf9fc;
+  --neatflow-surface-toolbar: #faf9fc;
+  --neatflow-surface-sidebar: #ffffff;
+  --neatflow-surface-elevated: #ffffff;
+  
+  /* Dark Mode Colors */
+  --neatflow-background-primary-dark: #19171f;
+  --neatflow-background-secondary-dark: #25222d;
+  --neatflow-background-tertiary-dark: #201d27;
+  --neatflow-surface-toolbar-dark: #26232d;
+  --neatflow-surface-sidebar-dark: #25222d;
+  --neatflow-surface-elevated-dark: #2d2935;
+  
+  /* Text Colors */
+  --neatflow-text-primary-light: #1a1a1a;
+  --neatflow-text-secondary-light: #636363;
+  --neatflow-text-muted-light: #909090;
+  
+  --neatflow-text-primary-dark: #ffffff;
+  --neatflow-text-secondary-dark: #b0b0b0;
+  --neatflow-text-muted-dark: #707070;
+  
+  /* Border Colors */
+  --neatflow-border-subtle-light: #e6e1ed;
+  --neatflow-border-default-light: #d8d3e3;
+  --neatflow-border-strong-light: #c8c3d3;
+  
+  --neatflow-border-subtle-dark: #3d3647;
+  --neatflow-border-default-dark: #4a4353;
+  --neatflow-border-strong-dark: #5c5363;
+  
+  /* Status Colors */
+  --neatflow-success: #2ac3a2;
+  --neatflow-success-light: #54ffbd;
+  --neatflow-warning: #ffd43b;
+  --neatflow-warning-light: #ffec8b;
+  --neatflow-error: #ff6b6b;
+  --neatflow-error-light: #ff9f9f;
+  
+  /* Focus and Interactive States */
+  --neatflow-focus-ring: #5b3f86;
+  --neatflow-focus-ring-dark: #c1a7ee;
+  --neatflow-hover-overlay-light: rgba(91, 63, 134, 0.1);
+  --neatflow-hover-overlay-dark: rgba(193, 167, 238, 0.15);
+  
+  /* ===== Typography ===== */
+  --neatflow-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --neatflow-font-size-xs: 11px;
+  --neatflow-font-size-sm: 12px;
+  --neatflow-font-size-md: 13px;
+  --neatflow-font-size-base: 14px;
+  --neatflow-font-size-lg: 15px;
+  --neatflow-font-size-xl: 16px;
+  --neatflow-font-size-2xl: 18px;
+  --neatflow-font-size-3xl: 20px;
+  
+  --neatflow-font-weight-normal: 400;
+  --neatflow-font-weight-medium: 500;
+  --neatflow-font-weight-semibold: 600;
+  --neatflow-font-weight-bold: 700;
+  
+  --neatflow-line-height-tight: 1.2;
+  --neatflow-line-height-normal: 1.4;
+  --neatflow-line-height-relaxed: 1.6;
+  
+  /* ===== Spacing ===== */
+  --neatflow-space-xxs: 2px;
+  --neatflow-space-xs: 4px;
+  --neatflow-space-sm: 8px;
+  --neatflow-space-md: 12px;
+  --neatflow-space-lg: 16px;
+  --neatflow-space-xl: 20px;
+  --neatflow-space-2xl: 24px;
+  --neatflow-space-3xl: 32px;
+  --neatflow-space-4xl: 40px;
+  
+  /* ===== Border Radius ===== */
+  --neatflow-radius-sm: 4px;
+  --neatflow-radius-md: 6px;
+  --neatflow-radius-lg: 8px;
+  --neatflow-radius-xl: 12px;
+  --neatflow-radius-2xl: 16px;
+  --neatflow-radius-full: 9999px;
+  
+  /* ===== Shadows ===== */
+  --neatflow-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --neatflow-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --neatflow-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --neatflow-shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.16);
+  
+  /* ===== Transitions ===== */
+  --neatflow-transition-fast: 100ms ease;
+  --neatflow-transition-normal: 200ms ease;
+  --neatflow-transition-slow: 300ms ease;
+  
+  /* ===== Z-Index Scale ===== */
+  --neatflow-z-dropdown: 100;
+  --neatflow-z-sticky: 200;
+  --neatflow-z-fixed: 300;
+  --neatflow-z-modal-backdrop: 400;
+  --neatflow-z-modal: 500;
+  --neatflow-z-popover: 600;
+  --neatflow-z-tooltip: 700;
+}
+
+/* Apply tokens based on system preference and NeatFlow enabled state */
+@media (prefers-color-scheme: light) {
+  :root:not([lwt-newtab]) .neatflow-enabled {
+    --neatflow-background-primary: #f8f7fb;
+    --neatflow-background-secondary: #ffffff;
+    --neatflow-background-tertiary: #faf9fc;
+    --neatflow-surface-toolbar: #faf9fc;
+    --neatflow-surface-sidebar: #ffffff;
+    --neatflow-surface-elevated: #ffffff;
+    
+    --neatflow-text-primary: var(--neatflow-text-primary-light);
+    --neatflow-text-secondary: var(--neatflow-text-secondary-light);
+    --neatflow-text-muted: var(--neatflow-text-muted-light);
+    
+    --neatflow-border-subtle: var(--neatflow-border-subtle-light);
+    --neatflow-border-default: var(--neatflow-border-default-light);
+    --neatflow-border-strong: var(--neatflow-border-strong-light);
+    
+    --neatflow-focus-ring: var(--neatflow-accent-primary);
+    --neatflow-hover-overlay: var(--neatflow-hover-overlay-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([lwt-newtab]) .neatflow-enabled {
+    --neatflow-background-primary: var(--neatflow-background-primary-dark);
+    --neatflow-background-secondary: var(--neatflow-background-secondary-dark);
+    --neatflow-background-tertiary: var(--neatflow-background-tertiary-dark);
+    --neatflow-surface-toolbar: var(--neatflow-surface-toolbar-dark);
+    --neatflow-surface-sidebar: var(--neatflow-surface-sidebar-dark);
+    --neatflow-surface-elevated: var(--neatflow-surface-elevated-dark);
+    
+    --neatflow-text-primary: var(--neatflow-text-primary-dark);
+    --neatflow-text-secondary: var(--neatflow-text-secondary-dark);
+    --neatflow-text-muted: var(--neatflow-text-muted-dark);
+    
+    --neatflow-border-subtle: var(--neatflow-border-subtle-dark);
+    --neatflow-border-default: var(--neatflow-border-default-dark);
+    --neatflow-border-strong: var(--neatflow-border-strong-dark);
+    
+    --neatflow-focus-ring: var(--neatflow-accent-light);
+    --neatflow-hover-overlay: var(--neatflow-hover-overlay-dark);
+  }
+}
+
+/* Manual theme override support */
+@media -moz-pref("neatflow.theme.override") {
+  /* Light theme override */
+  :root[neatflow-theme="light"] .neatflow-enabled,
+  :root:not([lwt-newtab]) .neatflow-enabled[neatflow-theme="light"] {
+    --neatflow-background-primary: #f8f7fb;
+    --neatflow-background-secondary: #ffffff;
+    --neatflow-background-tertiary: #faf9fc;
+    --neatflow-surface-toolbar: #faf9fc;
+    --neatflow-surface-sidebar: #ffffff;
+    --neatflow-surface-elevated: #ffffff;
+    
+    --neatflow-text-primary: var(--neatflow-text-primary-light);
+    --neatflow-text-secondary: var(--neatflow-text-secondary-light);
+    --neatflow-text-muted: var(--neatflow-text-muted-light);
+    
+    --neatflow-border-subtle: var(--neatflow-border-subtle-light);
+    --neatflow-border-default: var(--neatflow-border-default-light);
+    --neatflow-border-strong: var(--neatflow-border-strong-light);
+    
+    --neatflow-focus-ring: var(--neatflow-accent-primary);
+    --neatflow-hover-overlay: var(--neatflow-hover-overlay-light);
+  }
+
+  /* Dark theme override */
+  :root[neatflow-theme="dark"] .neatflow-enabled,
+  :root:not([lwt-newtab]) .neatflow-enabled[neatflow-theme="dark"] {
+    --neatflow-background-primary: var(--neatflow-background-primary-dark);
+    --neatflow-background-secondary: var(--neatflow-background-secondary-dark);
+    --neatflow-background-tertiary: var(--neatflow-background-tertiary-dark);
+    --neatflow-surface-toolbar: var(--neatflow-surface-toolbar-dark);
+    --neatflow-surface-sidebar: var(--neatflow-surface-sidebar-dark);
+    --neatflow-surface-elevated: var(--neatflow-surface-elevated-dark);
+    
+    --neatflow-text-primary: var(--neatflow-text-primary-dark);
+    --neatflow-text-secondary: var(--neatflow-text-secondary-dark);
+    --neatflow-text-muted: var(--neatflow-text-muted-dark);
+    
+    --neatflow-border-subtle: var(--neatflow-border-subtle-dark);
+    --neatflow-border-default: var(--neatflow-border-default-dark);
+    --neatflow-border-strong: var(--neatflow-border-strong-dark);
+    
+    --neatflow-focus-ring: var(--neatflow-accent-light);
+    --neatflow-hover-overlay: var(--neatflow-hover-overlay-dark);
+  }
+}

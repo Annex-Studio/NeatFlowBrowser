@@ -1,0 +1,257 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* NeatFlow Sidebar - Optional, collapsible sidebar */
+
+@media -moz-pref("browser.neatflow.enabled") {
+  @media -moz-pref("neatflow.sidebar.enabled") {
+    
+    /* Sidebar container */
+    #neatflow-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 280px;
+      background: var(--neatflow-surface-sidebar, var(--panel-background-color));
+      border-right: 1px solid var(--neatflow-border-subtle, var(--panel-border-color));
+      z-index: var(--neatflow-z-fixed, 300);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--neatflow-transition-normal, 200ms ease);
+      box-shadow: var(--neatflow-shadow-md, 0 2px 4px rgba(0, 0, 0, 0.08));
+    }
+    
+    /* Sidebar hidden state */
+    #neatflow-sidebar[hidden] {
+      transform: translateX(-100%);
+    }
+    
+    /* Sidebar header */
+    #neatflow-sidebar-header {
+      padding: var(--neatflow-space-lg, 16px);
+      border-bottom: 1px solid var(--neatflow-border-subtle, var(--panel-border-color));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      background: var(--neatflow-surface-toolbar, var(--toolbox-background-color));
+    }
+    
+    #neatflow-sidebar-title {
+      font-size: var(--neatflow-font-size-lg, 15px);
+      font-weight: var(--neatflow-font-weight-semibold, 600);
+      color: var(--neatflow-text-primary, var(--newtab-text-primary-color));
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    #neatflow-sidebar-close {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: var(--neatflow-space-xs, 4px);
+      margin: var(--neatflow-space-xxs, -4px);
+      color: var(--neatflow-text-secondary, var(--newtab-text-secondary-color));
+      border-radius: var(--neatflow-radius-sm, 4px);
+      transition: background var(--neatflow-transition-fast, 100ms ease);
+    }
+    
+    #neatflow-sidebar-close:hover {
+      background: var(--neatflow-hover-overlay, rgba(0, 0, 0, 0.05));
+      color: var(--neatflow-text-primary, var(--newtab-text-primary-color));
+    }
+    
+    #neatflow-sidebar-close:focus {
+      outline: 2px solid var(--neatflow-focus-ring, var(--focus-outline-color));
+      outline-offset: 2px;
+    }
+    
+    /* Sidebar content */
+    #neatflow-sidebar-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--neatflow-space-md, 12px);
+      scrollbar-width: thin;
+      scrollbar-color: var(--neatflow-border-subtle, var(--panel-border-color)) transparent;
+    }
+    
+    #neatflow-sidebar-content::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    #neatflow-sidebar-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    #neatflow-sidebar-content::-webkit-scrollbar-thumb {
+      background: var(--neatflow-border-subtle, var(--panel-border-color));
+      border-radius: var(--neatflow-radius-full, 9999px);
+    }
+    
+    /* Sidebar sections */
+    .neatflow-sidebar-section {
+      margin-bottom: var(--neatflow-space-xl, 20px);
+    }
+    
+    .neatflow-sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .neatflow-sidebar-section-title {
+      font-size: var(--neatflow-font-size-sm, 12px);
+      font-weight: var(--neatflow-font-weight-semibold, 600);
+      color: var(--neatflow-text-muted, var(--newtab-text-muted-color));
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--neatflow-space-sm, 8px);
+      padding: 0 var(--neatflow-space-sm, 8px);
+    }
+    
+    /* Sidebar items */
+    .neatflow-sidebar-item {
+      display: flex;
+      align-items: center;
+      padding: var(--neatflow-space-sm, 8px) var(--neatflow-space-md, 12px);
+      border-radius: var(--neatflow-radius-md, 6px);
+      cursor: pointer;
+      transition: background var(--neatflow-transition-fast, 100ms ease);
+      color: var(--neatflow-text-secondary, var(--newtab-text-secondary-color));
+      text-decoration: none;
+    }
+    
+    .neatflow-sidebar-item:hover {
+      background: var(--neatflow-hover-overlay, rgba(0, 0, 0, 0.05));
+      color: var(--neatflow-text-primary, var(--newtab-text-primary-color));
+    }
+    
+    .neatflow-sidebar-item:focus {
+      outline: 2px solid var(--neatflow-focus-ring, var(--focus-outline-color));
+      outline-offset: -2px;
+    }
+    
+    .neatflow-sidebar-item.active {
+      background: var(--neatflow-accent-light, rgba(193, 167, 238, 0.15));
+      color: var(--neatflow-accent-primary, var(--newtab-primary-action-background));
+    }
+    
+    .neatflow-sidebar-item-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: var(--neatflow-space-md, 12px);
+      flex-shrink: 0;
+      -moz-context-properties: fill;
+      fill: currentColor;
+    }
+    
+    .neatflow-sidebar-item-label {
+      font-size: var(--neatflow-font-size-base, 14px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    /* Sidebar toggle button (in toolbar) */
+    #neatflow-sidebar-toggle {
+      appearance: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: var(--neatflow-space-xs, 4px);
+      margin: var(--neatflow-space-xxs, -4px);
+      color: var(--neatflow-text-secondary, var(--toolbarbutton-icon-fill));
+      border-radius: var(--neatflow-radius-sm, 4px);
+      transition: background var(--neatflow-transition-fast, 100ms ease);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #neatflow-sidebar-toggle:hover {
+      background: var(--neatflow-hover-overlay, rgba(0, 0, 0, 0.08));
+      color: var(--neatflow-text-primary, var(--toolbarbutton-icon-fill-hover));
+    }
+    
+    #neatflow-sidebar-toggle:focus {
+      outline: 2px solid var(--neatflow-focus-ring, var(--focus-outline-color));
+      outline-offset: -2px;
+    }
+    
+    #neatflow-sidebar-toggle[open] {
+      background: var(--neatflow-accent-light, rgba(193, 167, 238, 0.15));
+      color: var(--neatflow-accent-primary, var(--toolbarbutton-icon-fill-active));
+    }
+    
+    /* Dark mode adjustments */
+    @media (prefers-color-scheme: dark) {
+      #neatflow-sidebar {
+        background: var(--neatflow-surface-sidebar-dark, #25222d);
+        border-right-color: var(--neatflow-border-subtle-dark, #3d3647);
+      }
+      
+      #neatflow-sidebar-header {
+        background: var(--neatflow-surface-toolbar-dark, #26232d);
+      }
+      
+      #neatflow-sidebar-close:hover {
+        background: var(--neatflow-hover-overlay-dark, rgba(193, 167, 238, 0.15));
+      }
+      
+      .neatflow-sidebar-item:hover {
+        background: var(--neatflow-hover-overlay-dark, rgba(193, 167, 238, 0.15));
+      }
+      
+      .neatflow-sidebar-item.active {
+        background: var(--neatflow-accent-light, rgba(193, 167, 238, 0.2));
+      }
+    }
+    
+    /* Manual theme overrides */
+    :root[neatflow-theme="light"] #neatflow-sidebar {
+      background: var(--neatflow-surface-sidebar, #ffffff);
+      border-right-color: var(--neatflow-border-subtle, #e6e1ed);
+    }
+    
+    :root[neatflow-theme="light"] #neatflow-sidebar-header {
+      background: var(--neatflow-surface-toolbar, #faf9fc);
+    }
+    
+    :root[neatflow-theme="dark"] #neatflow-sidebar {
+      background: var(--neatflow-surface-sidebar-dark, #25222d);
+      border-right-color: var(--neatflow-border-subtle-dark, #3d3647);
+    }
+    
+    :root[neatflow-theme="dark"] #neatflow-sidebar-header {
+      background: var(--neatflow-surface-toolbar-dark, #26232d);
+    }
+    
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      #neatflow-sidebar {
+        transition: none;
+      }
+    }
+    
+    /* High contrast mode */
+    @media (prefers-contrast: more) {
+      #neatflow-sidebar {
+        border-right: 2px solid;
+      }
+      
+      .neatflow-sidebar-item {
+        border: 1px solid transparent;
+      }
+      
+      .neatflow-sidebar-item:hover,
+      .neatflow-sidebar-item:focus {
+        border-color: currentColor;
+      }
+    }
+  }
+}

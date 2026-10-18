@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/1999/xhtml">
+<head>
+  <title>NeatFlow Sidebar</title>
+  <link rel="stylesheet" href="chrome://global/skin/global.css"/>
+  <link rel="stylesheet" href="chrome://browser/skin/sidebar/neatflow-sidebar.css"/>
+  <script src="chrome://browser/content/neatflow-sidebar.js"/>
+</head>
+<body>
+  <div id="neatflow-sidebar" hidden="true">
+    <div id="neatflow-sidebar-header">
+      <h1 id="neatflow-sidebar-title">NeatFlow</h1>
+      <button id="neatflow-sidebar-close" 
+              aria-label="Close sidebar"
+              title="Close sidebar">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div id="neatflow-sidebar-content">
+      <!-- Bookmarks Section -->
+      <div class="neatflow-sidebar-section" id="neatflow-sidebar-bookmarks">
+        <h2 class="neatflow-sidebar-section-title">Bookmarks</h2>
+        <div id="neatflow-sidebar-bookmarks-list"></div>
+      </div>
+      
+      <!-- History Section -->
+      <div class="neatflow-sidebar-section" id="neatflow-sidebar-history">
+        <h2 class="neatflow-sidebar-section-title">History</h2>
+        <div id="neatflow-sidebar-history-list"></div>
+      </div>
+      
+      <!-- Downloads Section -->
+      <div class="neatflow-sidebar-section" id="neatflow-sidebar-downloads">
+        <h2 class="neatflow-sidebar-section-title">Downloads</h2>
+        <div id="neatflow-sidebar-downloads-list"></div>
+      </div>
+      
+      <!-- Privacy Section -->
+      <div class="neatflow-sidebar-section" id="neatflow-sidebar-privacy">
+        <h2 class="neatflow-sidebar-section-title">Privacy</h2>
+        <a href="about:preferences#privacy" class="neatflow-sidebar-item">
+          <svg class="neatflow-sidebar-item-icon" viewBox="0 0 24 24">
+            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" fill="currentColor"/>
+          </svg>
+          <span class="neatflow-sidebar-item-label">Privacy Settings</span>
+        </a>
+        <a href="about:protections" class="neatflow-sidebar-item">
+          <svg class="neatflow-sidebar-item-icon" viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="currentColor"/>
+          </svg>
+          <span class="neatflow-sidebar-item-label">Protection Dashboard</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sidebar toggle button for toolbar -->
+  <button id="neatflow-sidebar-toggle" 
+          aria-label="Toggle sidebar"
+          title="Toggle sidebar"
+          aria-expanded="false"
+          aria-controls="neatflow-sidebar">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 3V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+</body>
+</html>

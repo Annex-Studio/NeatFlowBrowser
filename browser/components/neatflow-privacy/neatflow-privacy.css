@@ -1,0 +1,391 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* NeatFlow Privacy Dashboard Styles */
+
+@media -moz-pref("browser.neatflow.enabled") {
+  #neatflow-privacy-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--neatflow-background-primary, #f8f7fb);
+    color: var(--neatflow-text-primary, #1a1a1a);
+    font-family: var(--neatflow-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Header */
+  #neatflow-privacy-header {
+    background: var(--neatflow-surface-toolbar, #faf9fc);
+    border-bottom: 1px solid var(--neatflow-border-subtle, #e6e1ed);
+    padding: var(--neatflow-space-4xl, 40px);
+    text-align: center;
+  }
+
+  #neatflow-privacy-logo {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--neatflow-space-xl, 20px);
+  }
+
+  #neatflow-privacy-logo svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  #neatflow-privacy-title {
+    font-size: var(--neatflow-font-size-3xl, 28px);
+    font-weight: var(--neatflow-font-weight-bold, 700);
+    color: var(--neatflow-text-primary, #1a1a1a);
+    margin: 0 0 var(--neatflow-space-md, 8px);
+  }
+
+  #neatflow-privacy-subtitle {
+    font-size: var(--neatflow-font-size-lg, 16px);
+    color: var(--neatflow-text-secondary, #636363);
+    margin: 0;
+  }
+
+  /* Main Content */
+  #neatflow-privacy-main {
+    flex: 1;
+    padding: var(--neatflow-space-4xl, 40px);
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Sections */
+  .neatflow-privacy-section {
+    background: var(--neatflow-surface-elevated, #ffffff);
+    border-radius: var(--neatflow-radius-xl, 12px);
+    padding: var(--neatflow-space-2xl, 24px);
+    margin-bottom: var(--neatflow-space-xl, 20px);
+    box-shadow: var(--neatflow-shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.05));
+    border: 1px solid var(--neatflow-border-subtle, #e6e1ed);
+  }
+
+  .neatflow-privacy-section-header {
+    display: flex;
+    align-items: center;
+    gap: var(--neatflow-space-md, 12px);
+    margin-bottom: var(--neatflow-space-lg, 16px);
+  }
+
+  .neatflow-privacy-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--neatflow-accent-primary, #5b3f86);
+    flex-shrink: 0;
+  }
+
+  .neatflow-privacy-section h2 {
+    font-size: var(--neatflow-font-size-xl, 18px);
+    font-weight: var(--neatflow-font-weight-semibold, 600);
+    color: var(--neatflow-text-primary, #1a1a1a);
+    margin: 0;
+  }
+
+  .neatflow-privacy-description {
+    font-size: var(--neatflow-font-size-base, 14px);
+    color: var(--neatflow-text-secondary, #636363);
+    line-height: var(--neatflow-line-height-relaxed, 1.6);
+    margin: 0 0 var(--neatflow-space-xl, 20px);
+  }
+
+  /* Status */
+  .neatflow-privacy-status {
+    display: flex;
+    align-items: center;
+    gap: var(--neatflow-space-sm, 8px);
+    padding: var(--neatflow-space-md, 12px);
+    background: var(--neatflow-background-tertiary, #faf9fc);
+    border-radius: var(--neatflow-radius-md, 6px);
+    margin-bottom: var(--neatflow-space-xl, 20px);
+  }
+
+  .neatflow-privacy-status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--neatflow-radius-full, 9999px);
+    background: var(--neatflow-text-muted, #909090);
+    animation: pulse 2s infinite;
+  }
+
+  .neatflow-privacy-status-indicator.enabled {
+    background: var(--neatflow-success, #2ac3a2);
+    animation: none;
+  }
+
+  .neatflow-privacy-status-indicator.disabled {
+    background: var(--neatflow-error, #ff6b6b);
+    animation: none;
+  }
+
+  .neatflow-privacy-status-indicator.installed {
+    background: var(--neatflow-success, #2ac3a2);
+    animation: none;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* Buttons */
+  .neatflow-privacy-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--neatflow-space-sm, 8px);
+    padding: var(--neatflow-space-md, 12px) var(--neatflow-space-xl, 20px);
+    background: var(--neatflow-accent-primary, #5b3f86);
+    color: white;
+    border: none;
+    border-radius: var(--neatflow-radius-md, 6px);
+    font-size: var(--neatflow-font-size-base, 14px);
+    font-weight: var(--neatflow-font-weight-medium, 500);
+    cursor: pointer;
+    transition: background var(--neatflow-transition-fast, 100ms ease);
+    text-decoration: none;
+  }
+
+  .neatflow-privacy-button:hover {
+    background: var(--neatflow-accent-secondary, #74628a);
+  }
+
+  .neatflow-privacy-button:focus {
+    outline: 2px solid var(--neatflow-focus-ring, #5b3f86);
+    outline-offset: 2px;
+  }
+
+  .neatflow-privacy-button-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Settings List */
+  .neatflow-privacy-settings-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--neatflow-space-md, 12px);
+  }
+
+  .neatflow-privacy-settings-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--neatflow-space-md, 12px);
+    background: var(--neatflow-background-tertiary, #faf9fc);
+    border-radius: var(--neatflow-radius-md, 6px);
+    text-decoration: none;
+    color: var(--neatflow-text-primary, #1a1a1a);
+    transition: background var(--neatflow-transition-fast, 100ms ease);
+  }
+
+  .neatflow-privacy-settings-item:hover {
+    background: var(--neatflow-hover-overlay, rgba(91, 63, 134, 0.1));
+  }
+
+  .neatflow-privacy-settings-item:focus {
+    outline: 2px solid var(--neatflow-focus-ring, #5b3f86);
+    outline-offset: -2px;
+  }
+
+  .neatflow-privacy-settings-item-content h3 {
+    font-size: var(--neatflow-font-size-base, 14px);
+    font-weight: var(--neatflow-font-weight-medium, 500);
+    margin: 0 0 var(--neatflow-space-xxs, 2px);
+  }
+
+  .neatflow-privacy-settings-item-content p {
+    font-size: var(--neatflow-font-size-sm, 12px);
+    color: var(--neatflow-text-secondary, #636363);
+    margin: 0;
+  }
+
+  .neatflow-privacy-settings-item-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--neatflow-accent-primary, #5b3f86);
+  }
+
+  /* Features Grid */
+  .neatflow-privacy-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--neatflow-space-lg, 16px);
+  }
+
+  .neatflow-privacy-feature {
+    display: flex;
+    gap: var(--neatflow-space-md, 12px);
+    padding: var(--neatflow-space-md, 12px);
+    background: var(--neatflow-background-tertiary, #faf9fc);
+    border-radius: var(--neatflow-radius-md, 6px);
+  }
+
+  .neatflow-privacy-feature-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--neatflow-success, #2ac3a2);
+    flex-shrink: 0;
+  }
+
+  .neatflow-privacy-feature-content h3 {
+    font-size: var(--neatflow-font-size-base, 14px);
+    font-weight: var(--neatflow-font-weight-medium, 500);
+    margin: 0 0 var(--neatflow-space-xxs, 2px);
+  }
+
+  .neatflow-privacy-feature-content p {
+    font-size: var(--neatflow-font-size-sm, 12px);
+    color: var(--neatflow-text-secondary, #636363);
+    margin: 0;
+  }
+
+  /* Footer */
+  #neatflow-privacy-footer {
+    background: var(--neatflow-surface-toolbar, #faf9fc);
+    border-top: 1px solid var(--neatflow-border-subtle, #e6e1ed);
+    padding: var(--neatflow-space-2xl, 24px) var(--neatflow-space-4xl, 40px);
+    text-align: center;
+  }
+
+  #neatflow-privacy-footer p {
+    font-size: var(--neatflow-font-size-sm, 12px);
+    color: var(--neatflow-text-muted, #909090);
+    margin: 0 0 var(--neatflow-space-sm, 8px);
+    line-height: var(--neatflow-line-height-relaxed, 1.6);
+  }
+
+  #neatflow-privacy-footer a {
+    color: var(--neatflow-accent-primary, #5b3f86);
+    text-decoration: none;
+  }
+
+  #neatflow-privacy-footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    #neatflow-privacy-container {
+      background: var(--neatflow-background-primary-dark, #19171f);
+      color: var(--neatflow-text-primary-dark, #ffffff);
+    }
+
+    #neatflow-privacy-header {
+      background: var(--neatflow-surface-toolbar-dark, #26232d);
+      border-bottom-color: var(--neatflow-border-subtle-dark, #3d3647);
+    }
+
+    #neatflow-privacy-title {
+      color: var(--neatflow-text-primary-dark, #ffffff);
+    }
+
+    #neatflow-privacy-subtitle {
+      color: var(--neatflow-text-secondary-dark, #b0b0b0);
+    }
+
+    .neatflow-privacy-section {
+      background: var(--neatflow-surface-elevated-dark, #2d2935);
+      border-color: var(--neatflow-border-subtle-dark, #3d3647);
+    }
+
+    .neatflow-privacy-section h2 {
+      color: var(--neatflow-text-primary-dark, #ffffff);
+    }
+
+    .neatflow-privacy-description {
+      color: var(--neatflow-text-secondary-dark, #b0b0b0);
+    }
+
+    .neatflow-privacy-status {
+      background: var(--neatflow-background-tertiary-dark, #201d27);
+    }
+
+    .neatflow-privacy-button {
+      background: var(--neatflow-accent-light, #c1a7ee);
+      color: var(--neatflow-text-primary-dark, #ffffff);
+    }
+
+    .neatflow-privacy-button:hover {
+      background: var(--neatflow-accent-secondary, #b9a7d2);
+    }
+
+    .neatflow-privacy-settings-item {
+      background: var(--neatflow-background-tertiary-dark, #201d27);
+      color: var(--neatflow-text-primary-dark, #ffffff);
+    }
+
+    .neatflow-privacy-settings-item-content h3 {
+      color: var(--neatflow-text-primary-dark, #ffffff);
+    }
+
+    .neatflow-privacy-settings-item-content p {
+      color: var(--neatflow-text-secondary-dark, #b0b0b0);
+    }
+
+    .neatflow-privacy-feature {
+      background: var(--neatflow-background-tertiary-dark, #201d27);
+    }
+
+    .neatflow-privacy-feature-content h3 {
+      color: var(--neatflow-text-primary-dark, #ffffff);
+    }
+
+    .neatflow-privacy-feature-content p {
+      color: var(--neatflow-text-secondary-dark, #b0b0b0);
+    }
+
+    #neatflow-privacy-footer {
+      background: var(--neatflow-surface-toolbar-dark, #26232d);
+      border-top-color: var(--neatflow-border-subtle-dark, #3d3647);
+    }
+
+    #neatflow-privacy-footer p {
+      color: var(--neatflow-text-muted-dark, #707070);
+    }
+
+    #firefox-privacy-link {
+      color: var(--neatflow-accent-light, #c1a7ee);
+    }
+  }
+
+  /* Manual theme overrides */
+  :root[neatflow-theme="light"] #neatflow-privacy-container {
+    background: var(--neatflow-background-primary, #f8f7fb);
+    color: var(--neatflow-text-primary, #1a1a1a);
+  }
+
+  :root[neatflow-theme="dark"] #neatflow-privacy-container {
+    background: var(--neatflow-background-primary-dark, #19171f);
+    color: var(--neatflow-text-primary-dark, #ffffff);
+  }
+
+  /* High contrast mode */
+  @media (prefers-contrast: more) {
+    .neatflow-privacy-section {
+      border-width: 2px;
+    }
+
+    .neatflow-privacy-button {
+      border: 2px solid currentColor;
+    }
+
+    .neatflow-privacy-settings-item {
+      border: 1px solid var(--neatflow-border-strong, #c8c3d3);
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .neatflow-privacy-button,
+    .neatflow-privacy-settings-item,
+    .neatflow-privacy-section {
+      transition: none;
+    }
+  }
+}

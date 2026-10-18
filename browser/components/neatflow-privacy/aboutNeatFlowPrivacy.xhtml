@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>NeatFlow Privacy Dashboard</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="chrome://global/skin/global.css"/>
+  <link rel="stylesheet" href="chrome://browser/skin/neatflow-privacy.css"/>
+  <script src="chrome://browser/content/aboutNeatFlowPrivacy.js"/>
+</head>
+<body>
+  <div id="neatflow-privacy-container">
+    <header id="neatflow-privacy-header">
+      <div id="neatflow-privacy-logo">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="neatflow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#5b3f86"/>
+              <stop offset="100%" style="stop-color:#74628a"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 8C18.7 8 8 18.7 8 32s10.7 24 24 24 24-10.7 24-24S45.3 8 32 8zm0 44c-11 0-20-9-20-20s9-20 20-20 20 9 20 20-9 20-20 20z" fill="url(#neatflow-grad)"/>
+        </svg>
+      </div>
+      <h1 id="neatflow-privacy-title">NeatFlow Privacy Dashboard</h1>
+      <p id="neatflow-privacy-subtitle">Your privacy, your control</p>
+    </header>
+
+    <main id="neatflow-privacy-main">
+      <!-- Tracking Protection Section -->
+      <section class="neatflow-privacy-section" id="tracking-protection">
+        <div class="neatflow-privacy-section-header">
+          <svg class="neatflow-privacy-icon" viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="currentColor"/>
+          </svg>
+          <h2>Tracking Protection</h2>
+        </div>
+        <p class="neatflow-privacy-description">
+          NeatFlow Browser uses Firefox's built-in Enhanced Tracking Protection to block 
+          trackers that follow your activity across websites.
+        </p>
+        <div class="neatflow-privacy-status" id="tracking-protection-status">
+          <span class="neatflow-privacy-status-indicator"></span>
+          <span id="tracking-protection-text">Checking status...</span>
+        </div>
+        <a href="about:preferences#privacy" class="neatflow-privacy-button">
+          <span>Configure Tracking Protection</span>
+          <svg class="neatflow-privacy-button-icon" viewBox="0 0 24 24">
+            <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6-1.41-1.41z" fill="currentColor"/>
+          </svg>
+        </a>
+      </section>
+
+      <!-- Content Blocking Section -->
+      <section class="neatflow-privacy-section" id="content-blocking">
+        <div class="neatflow-privacy-section-header">
+          <svg class="neatflow-privacy-icon" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+          </svg>
+          <h2>Content Blocking</h2>
+        </div>
+        <p class="neatflow-privacy-description">
+          For enhanced content blocking, we recommend installing uBlock Origin. 
+          This provides additional protection against ads, trackers, and malicious content.
+        </p>
+        <div class="neatflow-privacy-status" id="ublock-status">
+          <span class="neatflow-privacy-status-indicator"></span>
+          <span id="ublock-text">uBlock Origin: Not installed</span>
+        </div>
+        <button class="neatflow-privacy-button" id="install-ublock">
+          <span>Install uBlock Origin</span>
+          <svg class="neatflow-privacy-button-icon" viewBox="0 0 24 24">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/>
+          </svg>
+        </button>
+      </section>
+
+      <!-- Privacy Settings Section -->
+      <section class="neatflow-privacy-section" id="privacy-settings">
+        <div class="neatflow-privacy-section-header">
+          <svg class="neatflow-privacy-icon" viewBox="0 0 24 24">
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-1.02-.65-2.16-.99-3.38-.99-2.68 0-4.87 2.2-4.87 5.02 0 .33.02.66.05.98L5.37 14.1c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.31.61.22l2.49-1.01c1.22.66 2.36.99 3.38.99 1.23 0 2.37-.34 3.38-.99l2.49 1.01c.22.09.49 0 .61-.22l2-3.46c.13-.22.07-.49-.13-.64L19.43 13z" fill="currentColor"/>
+          </svg>
+          <h2>Privacy Settings</h2>
+        </div>
+        <p class="neatflow-privacy-description">
+          Configure your privacy preferences to control how NeatFlow Browser handles 
+          your data and protects your privacy.
+        </p>
+        <div class="neatflow-privacy-settings-list">
+          <a href="about:preferences#privacy" class="neatflow-privacy-settings-item">
+            <div class="neatflow-privacy-settings-item-content">
+              <h3>Enhanced Tracking Protection</h3>
+              <p>Block trackers that follow you across websites</p>
+            </div>
+            <svg class="neatflow-privacy-settings-item-icon" viewBox="0 0 24 24">
+              <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6-1.41-1.41z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="about:preferences#privacy" class="neatflow-privacy-settings-item">
+            <div class="neatflow-privacy-settings-item-content">
+              <h3>Cookies and Site Data</h3>
+              <p>Manage how websites store data on your computer</p>
+            </div>
+            <svg class="neatflow-privacy-settings-item-icon" viewBox="0 0 24 24">
+              <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6-1.41-1.41z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="about:preferences#privacy" class="neatflow-privacy-settings-item">
+            <div class="neatflow-privacy-settings-item-content">
+              <h3>Permissions</h3>
+              <p>Control what websites can access on your device</p>
+            </div>
+            <svg class="neatflow-privacy-settings-item-icon" viewBox="0 0 24 24">
+              <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6-1.41-1.41z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="about:preferences#privacy" class="neatflow-privacy-settings-item">
+            <div class="neatflow-privacy-settings-item-content">
+              <h3>HTTPS-Only Mode</h3>
+              <p>Automatically upgrade connections to HTTPS</p>
+            </div>
+            <svg class="neatflow-privacy-settings-item-icon" viewBox="0 0 24 24">
+              <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6-1.41-1.41z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- NeatFlow Specific Section -->
+      <section class="neatflow-privacy-section" id="neatflow-specific">
+        <div class="neatflow-privacy-section-header">
+          <svg class="neatflow-privacy-icon" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
+          </svg>
+          <h2>NeatFlow Specific</h2>
+        </div>
+        <p class="neatflow-privacy-description">
+          NeatFlow Browser respects your privacy by default. We do not collect any 
+          telemetry or analytics data without your explicit consent.
+        </p>
+        <div class="neatflow-privacy-features">
+          <div class="neatflow-privacy-feature">
+            <svg class="neatflow-privacy-feature-icon" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/>
+            </svg>
+            <div class="neatflow-privacy-feature-content">
+              <h3>No Telemetry</h3>
+              <p>NeatFlow does not collect usage data or analytics</p>
+            </div>
+          </div>
+          <div class="neatflow-privacy-feature">
+            <svg class="neatflow-privacy-feature-icon" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+            </svg>
+            <div class="neatflow-privacy-feature-content">
+              <h3>No Sponsored Content</h3>
+              <p>New Tab page is free from ads and sponsored content</p>
+            </div>
+          </div>
+          <div class="neatflow-privacy-feature">
+            <svg class="neatflow-privacy-feature-icon" viewBox="0 0 24 24">
+              <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" fill="currentColor"/>
+            </svg>
+            <div class="neatflow-privacy-feature-content">
+              <h3>Open Source</h3>
+              <p>Built on Firefox with transparent, auditable code</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="neatflow-privacy-footer">
+      <p>NeatFlow Browser is built on Firefox and inherits its privacy protections.</p>
+      <p>For more information, visit <a href="https://www.mozilla.org/privacy/firefox/" id="firefox-privacy-link">Firefox Privacy Notice</a></p>
+    </footer>
+  </div>
+</body>
+</html>
