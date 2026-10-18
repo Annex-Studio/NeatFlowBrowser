@@ -6,7 +6,7 @@ browser.jar:
 % content branding %content/branding/ contentaccessible=yes
   content/branding/about.png
   content/branding/about-logo.png
-  content/branding/about-logo.svg            (../../../../branding/logos/icon-browser-display.svg)
+  content/branding/about-logo.svg            (../../../../branding/logos/icon-browser.svg)
   content/branding/about-logo@2x.png
   content/branding/about-wordmark.svg        (../../../../branding/logos/wordmark.svg)
   content/branding/about-wordmark-dark.svg   (../../../../branding/logos/wordmark-dark.svg)
