@@ -125,12 +125,16 @@ XPCOMUtils.defineLazyPreferenceGetter(
 XPCOMUtils.defineLazyPreferenceGetter(
   lazy,
   "highlightToSearchFeatureGate",
-  "browser.highlightToSearch.featureGate"
+  "browser.highlightToSearch.featureGate",
+  null,
+  () => recordSelectionMenuEnabled()
 );
 XPCOMUtils.defineLazyPreferenceGetter(
   lazy,
   "highlightToSearchEnabled",
-  "browser.highlightToSearch.enabled"
+  "browser.highlightToSearch.enabled",
+  null,
+  () => recordSelectionMenuEnabled()
 );
 XPCOMUtils.defineLazyPreferenceGetter(
   lazy,
@@ -158,6 +162,12 @@ XPCOMUtils.defineLazyServiceGetter(
   "@mozilla.org/parserutils;1",
   Ci.nsIParserUtils
 );
+
+function recordSelectionMenuEnabled() {
+  Glean.selectionMenu.enabled.set(
+    lazy.highlightToSearchFeatureGate && lazy.highlightToSearchEnabled
+  );
+}
 
 export const GenAI = {
   // Cache of potentially localized prompt
@@ -329,14 +339,13 @@ export const GenAI = {
    * @returns {bool} can show
    */
   get canShowSelectionMenu() {
-    if (lazy.chatShortcuts && this.canShowChatEntrypoint) {
-      return true;
+    if (lazy.highlightToSearchFeatureGate) {
+      return (
+        lazy.highlightToSearchEnabled &&
+        (this.canShowAIAction || lazy.highlightToSearchSearchEnabled)
+      );
     }
-    return (
-      lazy.highlightToSearchFeatureGate &&
-      lazy.highlightToSearchEnabled &&
-      (this.canShowAIAction || lazy.highlightToSearchSearchEnabled)
-    );
+    return lazy.chatShortcuts && this.canShowChatEntrypoint;
   },
 
   /**
@@ -423,6 +432,7 @@ export const GenAI = {
     Glean.genaiChatbot.shortcutsCustom.set(lazy.chatShortcutsCustom);
     Glean.genaiChatbot.sidebar.set(lazy.chatSidebar);
     Glean.selectionMenu.searchEnabled.set(lazy.highlightToSearchSearchEnabled);
+    recordSelectionMenuEnabled();
   },
 
   /**
@@ -722,8 +732,9 @@ export const GenAI = {
         });
       }
 
-      // Allow hiding these shortcuts (not shown in Smart Window)
-      if (!currentIsSmartWindow) {
+      // Allow hiding these shortcuts (not shown in Smart Window or with the
+      // Highlight to Search feature turned on)
+      if (!currentIsSmartWindow && !lazy.highlightToSearchFeatureGate) {
         vbox.appendChild(document.createXULElement("toolbarseparator"));
         const hider = addItem();
         document.l10n.setAttributes(hider, "genai-shortcuts-hide");

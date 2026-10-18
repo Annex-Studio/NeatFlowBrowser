@@ -18,6 +18,7 @@ declare namespace BrowserWindow {
     import("moz-src:///browser/components/tabbrowser/Tabbrowser.sys.mjs").Tabbrowser;
 
   var gBrowser: Tabbrowser;
+  var gCustomizeMode: import("moz-src:///browser/components/customizableui/CustomizeMode.sys.mjs").CustomizeMode;
   var gInitialPages: string[];
   var gMultiProcessBrowser: boolean;
   var gURLBar: import("chrome://browser/content/urlbar/UrlbarInput.mjs").UrlbarInput;
@@ -41,12 +42,23 @@ declare namespace BrowserWindow {
 
   // browser-commands.js
   var BrowserCommands: {
+    home(aEvent?: Event): void;
     openTab(options?: { event?: Event; url?: string }): void;
   };
 
   // browser-customtitlebar.js
   var CustomTitlebar: {
     readonly enabled: boolean;
+  };
+
+  // browser-sidebar.js
+  type SidebarStateProps =
+    import("moz-src:///browser/components/sidebar/SidebarState.sys.mjs").SidebarStateProps;
+
+  var SidebarController: {
+    getUIState(): SidebarStateProps;
+    markSessionRestoreStateReceived(): void;
+    updateUIState(state?: SidebarStateProps): Promise<void>;
   };
 
   // browser-webrtc.js

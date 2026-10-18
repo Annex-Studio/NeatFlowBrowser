@@ -105,9 +105,6 @@ browser/modules/webrtcUI.sys.mjs
 browser/themes/BuiltInThemeConfig.sys.mjs
 browser/themes/BuiltInThemes.sys.mjs
 browser/themes/ThemeVariableMap.sys.mjs
-dom/media/webspeech/recognition/SpeechRecognitionFeature.sys.mjs
-dom/media/webvtt/WebVTTParserWrapper.sys.mjs
-dom/media/webvtt/vtt.sys.mjs
 dom/push/ChromePushSubscription.sys.mjs
 dom/push/Push.sys.mjs
 dom/push/PushBroadcastService.sys.mjs

@@ -24,6 +24,7 @@ declare var Tabbrowser: typeof import("moz-src:///browser/components/tabbrowser/
 type Tabbrowser = BrowserWindow.Tabbrowser;
 
 declare var gBrowser: BrowserWindow["gBrowser"];
+declare var gCustomizeMode: BrowserWindow["gCustomizeMode"];
 declare var gInitialPages: BrowserWindow["gInitialPages"];
 declare var gMultiProcessBrowser: BrowserWindow["gMultiProcessBrowser"];
 declare var gURLBar: BrowserWindow["gURLBar"];
@@ -39,6 +40,7 @@ declare var openPreferences: BrowserWindow["openPreferences"];
 declare var gBrowserInit: BrowserWindow["gBrowserInit"];
 declare var BrowserCommands: BrowserWindow["BrowserCommands"];
 declare var CustomTitlebar: BrowserWindow["CustomTitlebar"];
+declare var SidebarController: BrowserWindow["SidebarController"];
 declare var gSharedTabWarning: BrowserWindow["gSharedTabWarning"];
 declare var gKeywordURIFixup: BrowserWindow["gKeywordURIFixup"];
 declare const DynamicShortcutTooltip: BrowserWindow["DynamicShortcutTooltip"];

@@ -1811,7 +1811,7 @@ export class AIWindow extends MozLitElement {
         "smartbar-initialized",
         () => {
           this.#resolveSmartbarReady();
-          this.#setupSmartbarFocus(smartbar);
+          smartbar.focus();
           this.#observeSmartbarHeight();
           this.#updateSmartbarModels(smartbar);
         },
@@ -1881,28 +1881,6 @@ export class AIWindow extends MozLitElement {
       },
     });
   };
-
-  #setupSmartbarFocus(smartbar) {
-    let hasAutoFocused = false;
-    let isMouseClick = false;
-
-    smartbar.addEventListener("mousedown", () => {
-      isMouseClick = true;
-      smartbar.toggleAttribute("suppress-focus-border", true);
-    });
-
-    smartbar.inputField.addEventListener("focus", () => {
-      if (!hasAutoFocused) {
-        smartbar.toggleAttribute("suppress-focus-border", true);
-        hasAutoFocused = true;
-      } else if (!isMouseClick) {
-        smartbar.removeAttribute("suppress-focus-border");
-      }
-      isMouseClick = false;
-    });
-
-    smartbar.focus();
-  }
 
   #observeSmartbarHeight() {
     const updateSmartbarHeight = () => {

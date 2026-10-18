@@ -562,6 +562,10 @@ pref("browser.urlbar.temporal.featureGate", false);
 // temporal search suggestions are turned on.
 pref("browser.urlbar.suggest.temporal", true);
 
+// If `browser.urlbar.suggest.temporal` is true, this controls whether seasonal
+// temporal search suggestions are shown.
+pref("browser.urlbar.suggest.temporal.seasonal", true);
+
 // Whether results that are part of the Firefox Suggest brand are shown in the
 // urlbar. This pref is exposed to the user in the UI, and it's sticky so that
 // its user-branch value persists regardless of whatever Firefox Suggest
@@ -3819,6 +3823,8 @@ pref("browser.ipProtection.userEnabled", false);
 pref("browser.ipProtection.userEnableCount", 0);
 // Pref to track if user has ever opened the VPN panel
 pref("browser.ipProtection.everOpenedPanel", false);
+// Pref to track if the user has opened the panel since release 160
+pref("browser.ipProtection.openedPanelSince160", false);
 // Pref to track if the VPN UI has ever been exposed to the user. Once it is
 // true the UI is shown regardless of the l10n coverage of
 // browser/ipProtection.ftl. A profile data upgrade sets it to true on profiles

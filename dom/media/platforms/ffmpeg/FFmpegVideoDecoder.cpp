@@ -468,13 +468,22 @@ int FFmpegVideoDecoder<LIBAV_VER>::ChooseVulkanPixelFormatFromContext(
       return AV_PIX_FMT_NONE;
     }
     AVHWFramesContext* frames_ctx = (AVHWFramesContext*)frames_ref->data;
+    AVVulkanFramesContext* hwfc = (AVVulkanFramesContext*)frames_ctx->hwctx;
+    // get_hw_frames_parameters sets DPB only when the output image is also the
+    // DPB. RADV reports a distinct DPB, so this bit is clear there.
+    const bool outputIsDpb =
+        hwfc->usage & VK_IMAGE_USAGE_VIDEO_DECODE_DPB_BIT_KHR;
 
     VkImageUsageFlags imageUsages =
         VK_IMAGE_USAGE_TRANSFER_SRC_BIT | VK_IMAGE_USAGE_TRANSFER_DST_BIT;
     if (VulkanDirectDecodeExportEnabled()) {
       imageUsages |= VK_IMAGE_USAGE_VIDEO_DECODE_DST_BIT_KHR;
-      imageUsages |= VK_IMAGE_USAGE_VIDEO_DECODE_DPB_BIT_KHR;
+      if (outputIsDpb) {
+        imageUsages |= VK_IMAGE_USAGE_VIDEO_DECODE_DPB_BIT_KHR;
+      }
     }
+    FFMPEGV_LOG("[VULKAN] output image DPB usage: {}",
+                outputIsDpb ? "kept" : "not set");
     PrepareVulkanDrmModifiersForSwFormat(frames_ctx->sw_format, imageUsages);
     bool drmModsAreLinearOrEmpty = true;
     if (!mVulkanDecoder.mDrmModifiers.empty()) {
@@ -494,7 +503,6 @@ int FFmpegVideoDecoder<LIBAV_VER>::ChooseVulkanPixelFormatFromContext(
     }
     if (VulkanDirectDecodeExportEnabled() &&
         !mVulkanDecoder.mForcedNvidiaBlockLinear && !drmModsAreLinearOrEmpty) {
-      AVVulkanFramesContext* hwfc = (AVVulkanFramesContext*)frames_ctx->hwctx;
       void* const originalCreatePnext = hwfc->create_pnext;
       int formatCount = 0;
       while (formatCount < AV_NUM_DATA_POINTERS &&

@@ -1674,7 +1674,7 @@ void InspectorUtils::GetComputationSteps(GlobalObject& aGlobalObject,
   float percentageBasis =
       GetPercentageBasisFor(aProperty, aElement, *pseudo, *computedStyle);
 
-  Servo_GetComputationSteps(&aExpression, &aElement, pseudo->mType,
+  Servo_GetComputationSteps(&aProperty, &aExpression, &aElement, pseudo->mType,
                             computedStyle,
                             aElement.OwnerDoc()->EnsureStyleSet().RawData(),
                             percentageBasis, &aResult);

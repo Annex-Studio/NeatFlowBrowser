@@ -508,8 +508,8 @@ bool WindowGlobalChild::CanCollectDocumentLanguageMetadata() {
     return false;
   }
 
-  return uri->SchemeIs("https") || uri->SchemeIs("http") ||
-         uri->SchemeIs("file") || uri->SchemeIs("moz-extension");
+  return net::SchemeIsHttpOrHttps(uri) || uri->SchemeIs("file") ||
+         uri->SchemeIs("moz-extension");
 }
 
 Maybe<DocumentLanguageMetadata> WindowGlobalChild::GetDocumentLanguageMetadata(
